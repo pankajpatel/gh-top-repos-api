@@ -1,0 +1,13 @@
+{
+  "name": "gh-top-repos-api",
+  "version": "1.0.0",
+  "main": "functions/github-repos/github-repos.js",
+  "repository": "git@github.com:pankajpatel/gh-top-repos-api.git",
+  "author": "Pankaj Patel <hello@pankaj.pro>",
+  "license": "The Unlicensed",
+  "private": true,
+  "dependencies": {
+    "@octokit/rest": "^18.1.0",
+    "json-schema-filter": "^0.1.5"
+  }
+}
