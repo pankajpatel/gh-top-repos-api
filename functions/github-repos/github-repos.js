@@ -26,7 +26,7 @@ const filterResponse = response => filter(
   {repositories: response.data.filter(repo => !repo.fork)}
 )
 
-module.exports = async function(event, context, callback) {
+exports.handler = async function(event, context, callback) {
   const {Octokit} = require('@octokit/rest')
   if (event.httpMethod === 'POST') {
     callback(null, {
