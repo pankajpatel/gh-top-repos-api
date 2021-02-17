@@ -1,2 +1,12 @@
 [build]
+  publish = "build"
+  command = "yarn build"
   functions = "functions"
+
+[[redirects]]
+  from = "/.functions/*"
+  to = "/.functions/:splat"
+
+[[redirects]]
+  from = "/*"
+  to = "/"

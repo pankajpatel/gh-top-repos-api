@@ -42,7 +42,7 @@ exports.handler = async function(event, context, callback) {
 
   const response = await api.request(
     `GET /user/repos`,
-    {visibility: 'public'}
+    {visibility: 'public', sort: 'updated', direction: 'desc'}
   )
 
   return {

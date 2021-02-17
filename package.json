@@ -1,5 +1,5 @@
 {
-  "name": "gh-top-repos-api",
+  "name": "gh-top-repos",
   "version": "1.0.0",
   "main": "functions/github-repos/github-repos.js",
   "repository": "git@github.com:pankajpatel/gh-top-repos-api.git",
@@ -7,7 +7,44 @@
   "license": "The Unlicensed",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.1.1",
     "@octokit/rest": "^18.1.0",
-    "json-schema-filter": "^0.1.5"
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "autoprefixer": "^9",
+    "json-schema-filter": "^0.1.5",
+    "postcss": "^7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-query": "^3.8.2",
+    "react-scripts": "4.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "eject": "react-scripts eject",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
