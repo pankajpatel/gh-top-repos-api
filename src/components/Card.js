@@ -1,21 +1,6 @@
-const StarBadge = ({count}) => count ? (
-  <span className='bg-gray-700 text-white border border-gray-900 rounded px-1'>
-    🌟 {count}
-  </span>
-) : null
-
-const LanguageBadge = ({language}) => language ? (
-  <div className='bg-red-500 text-white border border-red-600 rounded px-1'>
-    {language}
-  </div>
-) : null
-
-const GradientText = ({children}) => (
-  <span className='bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent hover:from-green-400 hover:from-blue-500'>
-    {children}
-  </span>
-)
-
+import StarBadge from './StarBadge'
+import LanguageBadge from './LanguageBadge'
+import GradientText from './GradientText'
 
 const Card = ({data, className = ''}) => (
   <a href={data.html_url} className={`transform hover:scale-110 transition duration-150 ease-in-out ${className}`}>
