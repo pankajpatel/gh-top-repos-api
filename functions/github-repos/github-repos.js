@@ -35,18 +35,29 @@ exports.handler = async function(event, context, callback) {
     });
   }
 
+  const user = event.queryStringParameters.user
 
   const api = new Octokit({
     auth: process.env.GITHUB_ACCESS_TOKEN
   })
 
-  const response = await api.request(
-    `GET /user/repos`,
-    {visibility: 'public', sort: 'updated', direction: 'desc'}
-  )
+  const endpoint = user ? `/users/${user}/repos` : '/user/repos'
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(filterResponse(response)),
+  try {
+
+    const response = await api.request(
+      `GET ${endpoint}`,
+      {visibility: 'public', sort: 'updated', direction: 'desc'}
+    )
+  
+    return {
+      statusCode: 200,
+      body: JSON.stringify(filterResponse(response)),
+    }
+  } catch(e) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(e)
+    }
   }
 }
